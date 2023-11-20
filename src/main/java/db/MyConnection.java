@@ -9,7 +9,7 @@ public class MyConnection {
 
     public static Connection getConnection()  {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fileHiderDb?useSSL=false","root","Tottaiitbtiip123@");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fileHiderDb?useSSL=true","root","Tottaiitbtiip123@");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -17,7 +17,7 @@ public class MyConnection {
         return connection;
     }
 
-    public static void closeConnection() {
+    public static void  closeConnection() {
         if(connection != null) {
             try {
                 connection.close();
